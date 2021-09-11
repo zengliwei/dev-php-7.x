@@ -1,2 +1,3 @@
-# dev-php-7.x
-PHP 7.x development environment based on zengliwei/dev
+# PHP 7.4 Development Environment
+
+PHP 7.4 development environment based on [https://github.com/zengliwei/dev](https://github.com/zengliwei/dev).
