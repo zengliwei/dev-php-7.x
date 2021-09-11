@@ -15,6 +15,8 @@ for /f "tokens=1,2 delims==" %%i in ( .env ) do (
     set dbUser=%%j
   ) else if %%i == DB_PSWD (
     set dbPass=%%j
+  ) else if %%i == RESTART (
+    set restartType=%%j
   )
 )
 
@@ -36,7 +38,7 @@ exit
 ::
 :START_PROJECT
 
-  rename ..\..\config\router\%domain% %domain%.conf
+  rename ..\..\config\router\%domain% %domain%.%restartType%.conf
   docker-compose start
   docker exec dev_router /usr/sbin/service nginx reload
 
