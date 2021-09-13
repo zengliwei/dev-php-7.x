@@ -24,14 +24,10 @@ for /f "skip=1" %%c in ('docker ps -a --filter "name=%project%_web"') do (
         exit
     )
 )
-call :BUILD_PROJECT
-exit
 
-:BUILD_PROJECT
-    call add-host-record "%domain%"
-    call create-proxy-config "%project%" "%domain%"
-    call docker-compose up --no-recreate -d
-    call config-phpmyadmin "%project%"
-    call decompress-packets "%project%"
-    call start-project "%domain%"
-goto :EOF
+call add-host-record "%domain%"
+call create-proxy-config "%project%" "%domain%"
+call docker-compose up --no-recreate -d
+call config-phpmyadmin "%project%"
+call decompress-packets "%project%"
+call start-project "%domain%"
