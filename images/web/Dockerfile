@@ -12,8 +12,6 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) bcmath intl opcache pdo_mysql soap xml xsl zip sockets \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
     && pecl install redis \
     && docker-php-ext-enable redis
 
