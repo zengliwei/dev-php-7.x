@@ -16,3 +16,5 @@ alias l='ls $LS_OPTIONS -lA'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+export PHP_INI_DIR='/usr/local/etc/php'
